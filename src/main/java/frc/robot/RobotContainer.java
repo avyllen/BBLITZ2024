@@ -2,6 +2,8 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
+// Chase <3 Daren
+
 package frc.robot;
 
 import com.ctre.phoenix6.Utils;
@@ -57,7 +59,7 @@ public class RobotContainer {
   public final ElevatorWithSpeed elevatorUp = new ElevatorWithSpeed(elevator, -1);
   public final ElevatorWithSpeed elevatorDown = new ElevatorWithSpeed(elevator, 1);
 
-  //pivot Subsystem
+  //Pivot Subsystem
   public final PivotSubsystem pivot = new PivotSubsystem();
   public final PivotwithSpeed pivotUp = new PivotwithSpeed(pivot,-.2);
   public final PivotwithSpeed pivotDown = new PivotwithSpeed(pivot,.2);
@@ -116,8 +118,8 @@ public class RobotContainer {
     elevator.setDefaultCommand(elevator.holdPosition());
     climber.setDefaultCommand(climber.stop());
 
-/* DRIVE CONTROLS */
-//Shoot
+ /* DRIVE CONTROLS */
+// Shoot
   xbox.rightTrigger().onTrue(teleShootCommand); 
 //Intake
   xbox.rightBumper().onTrue(intakeCommand);
