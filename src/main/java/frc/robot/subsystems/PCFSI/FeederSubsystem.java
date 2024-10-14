@@ -24,7 +24,7 @@ import frc.robot.generated.Constants.FeederConstants;
 
 public class FeederSubsystem  extends SubsystemBase{
  
-private final TalonFX  m_feeder;
+private final TalonFX m_feeder;
 
 private final VelocityVoltage m_voltageVelocity = new VelocityVoltage(0, 0, true, 0, 0, false, false, false);
 

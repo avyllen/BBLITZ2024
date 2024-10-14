@@ -2,7 +2,6 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-// Chase <3 Daren
 
 package frc.robot;
 
@@ -23,8 +22,10 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.Commands.AutoShootCommand;
 import frc.robot.Commands.ElevatorWithSpeed;
 import frc.robot.Commands.IntakeCommand;
+import frc.robot.Commands.IntakeCommandAuto;
 import frc.robot.Commands.PivotwithSpeed;
 import frc.robot.Commands.TELEShootCommand;
 import frc.robot.generated.TunerConstants;
@@ -77,6 +78,8 @@ public class RobotContainer {
   //COMPLEX COMMANDS
   TELEShootCommand  teleShootCommand = new TELEShootCommand(shooter,feeder,led);
   IntakeCommand intakeCommand = new IntakeCommand(intake,feeder,led,pivot,elevator);
+  IntakeCommandAuto intakeCommandAuto = new IntakeCommandAuto(intake,feeder,led,pivot,elevator);
+  AutoShootCommand autoShootCommand = new AutoShootCommand(shooter,feeder,led);
   
   /* Setting up bindings for necessary control of the swerve drive platform */
   private final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain; // My drivetrain
@@ -161,11 +164,11 @@ public class RobotContainer {
 
     //SET-FIELD ORIENTATION
      NamedCommands.registerCommand("setFieldRelative",drivetrain.runOnce(() ->  drivetrain.seedFieldRelative()));
-  //NamedCommands.registerCommand("startIntake", intakecommandAuto);
+  NamedCommands.registerCommand("startIntake", intakeCommandAuto);
   //NamedCommands.registerCommand("STAGEIntake", intakecommandAutoSTAGE);
   //NamedCommands.registerCommand("SubwooferPivot",autoPivotSub);
   //NamedCommands.registerCommand("FeederShoot", feederShot);
-  //NamedCommands.registerCommand("AutoShoot",autoshoot );
+  NamedCommands.registerCommand("AutoShoot", autoShootCommand);
   //NamedCommands.registerCommand("PivotShot", autoshootintakepos);
   NamedCommands.registerCommand("PivotShot", teleShootCommand);
      autoChooser = AutoBuilder.buildAutoChooser(); // Default auto will be `Commands.none()`
