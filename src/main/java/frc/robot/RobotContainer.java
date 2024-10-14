@@ -163,16 +163,16 @@ public class RobotContainer {
     configureBindings();
 
     //SET-FIELD ORIENTATION
-     NamedCommands.registerCommand("setFieldRelative",drivetrain.runOnce(() ->  drivetrain.seedFieldRelative()));
-  NamedCommands.registerCommand("startIntake", intakeCommandAuto);
+ NamedCommands.registerCommand("setFieldRelative",drivetrain.runOnce(() ->  drivetrain.seedFieldRelative()));
+ NamedCommands.registerCommand("startIntake", intakeCommandAuto);
   //NamedCommands.registerCommand("STAGEIntake", intakecommandAutoSTAGE);
   //NamedCommands.registerCommand("SubwooferPivot",autoPivotSub);
   //NamedCommands.registerCommand("FeederShoot", feederShot);
-  NamedCommands.registerCommand("AutoShoot", autoShootCommand);
+NamedCommands.registerCommand("AutoShoot", autoShootCommand);
   //NamedCommands.registerCommand("PivotShot", autoshootintakepos);
-  NamedCommands.registerCommand("PivotShot", teleShootCommand);
-     autoChooser = AutoBuilder.buildAutoChooser(); // Default auto will be `Commands.none()`
-     SmartDashboard.putData("Auto Mode", autoChooser);
+NamedCommands.registerCommand("PivotShot", teleShootCommand);
+autoChooser = AutoBuilder.buildAutoChooser(); // Default auto will be `Commands.none()`
+SmartDashboard.putData("Auto Mode", autoChooser);
   }
 
   public Command getAutonomousCommand() {
