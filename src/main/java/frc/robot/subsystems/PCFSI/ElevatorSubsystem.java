@@ -21,6 +21,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.generated.Constants.ElevatorConstants;
 
 public class ElevatorSubsystem extends SubsystemBase {
+
+
+  private double position;
   private CANSparkFlex m_leftElevator;
   private SparkPIDController l_pidController;
   private RelativeEncoder l_encoder;
@@ -32,6 +35,8 @@ private GenericEntry elevatorVoltage =
          .getEntry();
   /** Creates a new ElevatorSubsystem. */
   public ElevatorSubsystem() {
+
+    position = 0;
 
     m_leftElevator = new CANSparkFlex(ElevatorConstants.leftElevator, MotorType.kBrushless);
     m_leftElevator.restoreFactoryDefaults();
@@ -49,7 +54,7 @@ private GenericEntry elevatorVoltage =
      l_encoder = m_leftElevator.getEncoder();
   
      // PID coefficients
-     kP = 0.07; 
+     kP = 0.09; 
      kI = 0;
      kD = 0; 
      kIz = 0; 
@@ -68,6 +73,12 @@ private GenericEntry elevatorVoltage =
   
      l_encoder.setPosition(0);
   }
+
+public void setHoldPosition(double holdposition) {
+  position = holdposition;
+
+}
+
 public void setVelocity(double setPoint)
 {
   m_leftElevator.set(-setPoint);
@@ -140,7 +151,7 @@ public Command withPosition(double setPoint)
 
 public Command holdPosition()
 {
-  return run(() -> this.setPosition(this.getEncoder()));
+  return run(() -> this.setPosition(position));
 }
 
 public Command setHomePosition()
@@ -162,6 +173,10 @@ public Command setClimbPosition()
 public boolean LimitChecks()
 {
 return ((l_encoder.getPosition() > -1.5 && m_leftElevator.getAppliedOutput() > 0) || (l_encoder.getPosition() < ElevatorConstants.ELEVATORMAX && m_leftElevator.getAppliedOutput() < 0));
+}
+
+public void end() {
+
 }
 
 @Override

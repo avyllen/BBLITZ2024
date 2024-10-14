@@ -14,7 +14,6 @@ public class TELEShootCommand extends Command{
 
     private final FeederSubsystem feeder;
     private final ShooterSubsystem shooter;
-
     private final LEDSubsystem led;
 
     public TELEShootCommand(ShooterSubsystem shooter,FeederSubsystem feeder , LEDSubsystem led) {
@@ -27,21 +26,21 @@ public class TELEShootCommand extends Command{
       @Override
   public void initialize() {
     led.setBLUE();
-    shooter.setVelocity(100);
+    shooter.setVelocity(-100);
     }
 
   @Override
   public void execute()
   {
-    shooter.setVelocity(100);
-    if(shooter.getSpeed()  > 70){
-      feeder.setVelocity(.32);
+    shooter.setVelocity(-100);
+    if(shooter.getSpeed()  < -70){
+      feeder.setVelocity(-32);
     }
   }
 
       @Override
       public boolean isFinished() {
-        return !feeder.noteCheck();     
+        return feeder.noteCheck();     
       }
 
      @Override

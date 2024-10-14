@@ -15,7 +15,6 @@ public class IntakeCommand extends Command{
     private final FeederSubsystem feeder;
     private final PivotSubsystem pivot;
     private final ElevatorSubsystem elevator;
-
     private final LEDSubsystem led;
     
     private boolean firstcheck = true;
@@ -42,18 +41,18 @@ public class IntakeCommand extends Command{
   @Override
   public void execute()
   {
-    feeder.setVelocity(.33);
-    intake.setVelocity(-50);
+    feeder.setVelocity(-15);
+    intake.setVelocity(-20);
   }
 
       @Override
       public boolean isFinished() {
-          return feeder.noteCheck();
+          return !feeder.noteCheck();
       }
 
      @Override
      public void end(boolean interrupted) {
-      feeder.disable();
+      feeder.withDisable();
       intake.withDisable();
       elevator.holdPosition();
       pivot.setVelocity(0);

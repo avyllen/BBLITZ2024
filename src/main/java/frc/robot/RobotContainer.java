@@ -57,8 +57,8 @@ public class RobotContainer {
   public final FeederSubsystem feeder = new FeederSubsystem();
   //Elevator Subsystem
   public final ElevatorSubsystem elevator = new ElevatorSubsystem();
-  public final ElevatorWithSpeed elevatorUp = new ElevatorWithSpeed(elevator, -1);
-  public final ElevatorWithSpeed elevatorDown = new ElevatorWithSpeed(elevator, 1);
+  public final ElevatorWithSpeed elevatorUp = new ElevatorWithSpeed(elevator, .1);
+  public final ElevatorWithSpeed elevatorDown = new ElevatorWithSpeed(elevator, -.1);
 
   //Pivot Subsystem
   public final PivotSubsystem pivot = new PivotSubsystem();
@@ -101,9 +101,9 @@ public class RobotContainer {
             .withRotationalRate(-xbox.getRightX() * MaxAngularRate) // Drive counterclockwise with negative X (left)
         ));
 
-    xbox.a().whileTrue(drivetrain.applyRequest(() -> brake)); 
-    xbox.b().whileTrue(drivetrain
-        .applyRequest(() -> point.withModuleDirection(new Rotation2d(-xbox.getLeftY(), -xbox.getLeftX()))));
+    //xbox.a().whileTrue(drivetrain.applyRequest(() -> brake)); 
+   // xbox.b().whileTrue(drivetrain
+       // .applyRequest(() -> point.withModuleDirection(new Rotation2d(-xbox.getLeftY(), -xbox.getLeftX()))));
 
     // RESET THE FIELD-CENTRIC HEADING ON THE LEFT BUMPER
     xbox.leftBumper().onTrue(drivetrain.runOnce(() -> drivetrain.seedFieldRelative()));
@@ -127,7 +127,7 @@ public class RobotContainer {
 //Intake
   xbox.rightBumper().onTrue(intakeCommand);
 //Outtake
-  xbox.leftBumper().whileTrue(new ParallelCommandGroup(intake.outtakeCommand(),feeder.outtakeCommand(),pivot.intakePositionCommand()));
+  xbox.leftBumper().whileTrue(new ParallelCommandGroup(intake.outtakeCommand(),feeder.outtake(),pivot.intakePositionCommand()));
 //AmpOuttake
 /* tba */
 // Pivot Up & Down
