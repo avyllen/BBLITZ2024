@@ -1,0 +1,95 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.7220452902444284,
+        "y": 6.887126081944472
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.3929974013794193,
+        "y": 6.8969930247552815
+      },
+      "isLocked": false,
+      "linkedName": "CC 3 Note Start End"
+    },
+    {
+      "anchor": {
+        "x": 2.1724858834333065,
+        "y": 6.265508684863524
+      },
+      "prevControl": {
+        "x": 1.945546198784706,
+        "y": 6.304976456106759
+      },
+      "nextControl": {
+        "x": 2.4708083331975743,
+        "y": 6.2136265196871285
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.270705926027238,
+        "y": 6.4924483695121245
+      },
+      "prevControl": {
+        "x": 4.824512505210033,
+        "y": 6.399890030797099
+      },
+      "nextControl": {
+        "x": 5.783406913022544,
+        "y": 6.598803034103381
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 7.915046599323969,
+        "y": 7.271936851566012
+      },
+      "prevControl": {
+        "x": 6.861071310203633,
+        "y": 6.7566600435516255
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "CC 3 Note Outside Pickup End"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1.0,
+      "rotationDegrees": 0,
+      "rotateFast": false
+    },
+    {
+      "waypointRelativePos": 2,
+      "rotationDegrees": 5.270882479100361,
+      "rotateFast": false
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 22.306205054907696,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "3 Note CC Auto Paths",
+  "previewStartingState": {
+    "rotation": 58.39249775375109,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

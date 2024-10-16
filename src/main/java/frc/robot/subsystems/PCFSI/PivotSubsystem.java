@@ -61,7 +61,7 @@ public void setPosition(double setPoint)
 
 public void intakePosition()
 {
-  m_pidController.setReference(8.95, CANSparkMax.ControlType.kPosition);
+  m_pidController.setReference(-8.95, CANSparkMax.ControlType.kPosition);
 }
 
 public void homePosition()
@@ -75,14 +75,23 @@ public void subwooferPosition()
   m_pidController.setReference(Constants.PivotConstants.subwooferShotPosition, CANSparkMax.ControlType.kPosition);
 }
 
+public void farShotPosition()
+{
+  m_pidController.setReference(Constants.PivotConstants.farShot, CANSparkMax.ControlType.kPosition);
+}
+
+public void extremeFarShotPosition() {
+  m_pidController.setReference(Constants.PivotConstants.extremeFarShot, CANSparkMax.ControlType.kPosition);
+}
+
 public void otherPositions()
 {
-  m_pidController.setReference(12.5, CANSparkMax.ControlType.kPosition);
+  m_pidController.setReference(-12.5, CANSparkMax.ControlType.kPosition);
 }
 
 public boolean LimitChecks()
 {
-return ((-m_encoder.getPosition() < 0.4 && m_pivot.getAppliedOutput() > 0) || (-m_encoder.getPosition() > PivotConstants.PIVOTMAX && m_pivot.getAppliedOutput() < 0));
+return ((m_encoder.getPosition() > -0.4 && m_pivot.getAppliedOutput() > 0) || (m_encoder.getPosition() < PivotConstants.PIVOTMAX && m_pivot.getAppliedOutput() < 0));
 }
 
 public Command withPosition(double setPoint)
@@ -92,7 +101,7 @@ public Command withPosition(double setPoint)
 
 public Command intakePositionCommand()
 {
-  return run(() -> this.setPosition(9.95));
+  return run(() -> this.setPosition(-9.95));
 }
 
 public Command subwooferPositionCommand()
@@ -102,7 +111,7 @@ public Command subwooferPositionCommand()
 
 public Command ampPositionCommand()
 {
-  return run(() -> this.setPosition(12.5)); //amp stuff
+  return run(() -> this.setPosition(-19.7)); //amp stuff
 }
 
 public Command setHomePositionCommand()

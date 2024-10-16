@@ -42,7 +42,7 @@ public class IntakeCommand extends Command{
   public void execute()
   {
     feeder.setVelocity(-15);
-    intake.setVelocity(-20);
+    intake.setVelocity(-30);
   }
 
       @Override

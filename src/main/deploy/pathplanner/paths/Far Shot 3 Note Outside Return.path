@@ -1,0 +1,58 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 7.905179656513161,
+        "y": 0.7597545964322702
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 7.30329614505383,
+        "y": 0.7992223676755037
+      },
+      "isLocked": false,
+      "linkedName": "3 Note Outside Pickup End"
+    },
+    {
+      "anchor": {
+        "x": 1.8995614596079393,
+        "y": 3.1619258673610067
+      },
+      "prevControl": {
+        "x": 2.738251598526676,
+        "y": 2.14563075784771
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Far Shot 3 Note Inside Return End"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": -49.0,
+      "rotateFast": false
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -47.04540848888723,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "3 Note Far Shot Auto Paths",
+  "previewStartingState": {
+    "rotation": 0.0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

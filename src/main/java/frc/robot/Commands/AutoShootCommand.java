@@ -42,15 +42,15 @@ public class AutoShootCommand extends Command{
   public void execute()
   {
     shooter.setVelocity(100);
-    if(shooter.getSpeed()  < -70 ){
-    feeder.setVelocity(.32);
+    if(shooter.getSpeed()  < -80 ){
+    feeder.setVelocity(-32);
     led.setBLUE();
     }
   }
 
       @Override
       public boolean isFinished() {
-       return !feeder.noteCheck();
+       return feeder.noteCheck();
       }
 
      @Override

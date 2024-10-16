@@ -1,0 +1,58 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.719320017812645,
+        "y": 4.11050362756931
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.7291869606234536,
+        "y": 4.120370570380119
+      },
+      "isLocked": false,
+      "linkedName": "CC 3 Note Start Start"
+    },
+    {
+      "anchor": {
+        "x": 0.7220452902444284,
+        "y": 6.887126081944472
+      },
+      "prevControl": {
+        "x": 0.7199155936773439,
+        "y": 6.886227310916161
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "CC 3 Note Start End"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": 64.0,
+      "rotateFast": false
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 65.77225468204584,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "3 Note CC Auto Paths",
+  "previewStartingState": {
+    "rotation": 0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

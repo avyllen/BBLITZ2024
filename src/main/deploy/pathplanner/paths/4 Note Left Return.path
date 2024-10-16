@@ -1,0 +1,58 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.5670791427174855,
+        "y": 6.733731013824367
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.0752240077946618,
+        "y": 6.195032532718418
+      },
+      "isLocked": false,
+      "linkedName": "4 Note Left Pickup End"
+    },
+    {
+      "anchor": {
+        "x": 1.3842846515935527,
+        "y": 5.539225686154654
+      },
+      "prevControl": {
+        "x": 1.9751470272171325,
+        "y": 6.166839256755436
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "4 Note Left Return End"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0,
+      "rotationDegrees": 43.0,
+      "rotateFast": false
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "4 Note Auto Paths",
+  "previewStartingState": {
+    "rotation": 39.805571092265225,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

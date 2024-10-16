@@ -86,6 +86,11 @@ public Command outtake()
   return run(() -> this.setVelocity(FeederConstants.OutakeSPEED));
 }
 
+public Command AMPouttake()
+{
+  return run(() -> this.setVelocity(FeederConstants.ampOutakeSPEED));
+}
+
 public boolean noteCheck()
 {
   return intakeLine.get();

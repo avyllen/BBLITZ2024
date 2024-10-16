@@ -26,14 +26,14 @@ public class TELEShootCommand extends Command{
       @Override
   public void initialize() {
     led.setBLUE();
-    shooter.setVelocity(-100);
+    shooter.setVelocity(100);
     }
 
   @Override
   public void execute()
   {
-    shooter.setVelocity(-100);
-    if(shooter.getSpeed()  < -70){
+    shooter.setVelocity(100);
+    if(shooter.getSpeed()  < -80){
       feeder.setVelocity(-32);
     }
   }

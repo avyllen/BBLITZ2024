@@ -1,0 +1,55 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.9884527461362631,
+      "y": 6.739121939782341
+    },
+    "rotation": 0.0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "setFieldRelative"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "1 Note OOW Start"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "teleShootCommand"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "1 Note Out of Way"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 8.0
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "1 Note OOW Leave"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "1 Note Autos",
+  "choreoAuto": false
+}

@@ -1,0 +1,63 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 7.895509771048071,
+        "y": 5.960815801802787
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 6.573142377053986,
+        "y": 6.423379769836463
+      },
+      "isLocked": false,
+      "linkedName": "CC 3 Note Inside Pickup End"
+    },
+    {
+      "anchor": {
+        "x": 3.9255361820281403,
+        "y": 6.323851734722014
+      },
+      "prevControl": {
+        "x": 5.359508411324516,
+        "y": 6.679920282917488
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "CC 3 Note Outside Return End"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0,
+      "rotationDegrees": -28.0,
+      "rotateFast": false
+    },
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": 13.0,
+      "rotateFast": false
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 12.282569972246131,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "3 Note CC Auto Paths",
+  "previewStartingState": {
+    "rotation": -25.866356794094287,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

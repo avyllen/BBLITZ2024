@@ -108,11 +108,25 @@ private void setPosition(double setPoint)
 public void homePosition()
 {
     l_pidController.setReference(ElevatorConstants.eHomePos, CANSparkMax.ControlType.kPosition);
+    position = ElevatorConstants.eHomePos;
 }
 
 public void ampPosition()
 {
   l_pidController.setReference(ElevatorConstants.eAmp, CANSparkMax.ControlType.kPosition);
+  position = ElevatorConstants.eAmp;
+}
+
+public void farShotPosition()
+{
+  l_pidController.setReference(ElevatorConstants.efarshot, CANSparkMax.ControlType.kPosition);
+  position = ElevatorConstants.efarshot;
+}
+
+public void extremeFarShotPosition()
+{
+  l_pidController.setReference(ElevatorConstants.eextremefarshot, CANSparkMax.ControlType.kPosition);
+  position = ElevatorConstants.eextremefarshot;
 }
 
 public double getEncoder()
@@ -178,6 +192,8 @@ return ((l_encoder.getPosition() > -1.5 && m_leftElevator.getAppliedOutput() > 0
 public void end() {
 
 }
+
+
 
 @Override
 public void periodic() {

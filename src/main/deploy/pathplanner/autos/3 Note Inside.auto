@@ -1,0 +1,99 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.958851917703837,
+      "y": 4.341454836755828
+    },
+    "rotation": 0.7848246029918875
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "setFieldRelative"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "3 Note Start"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "teleShootCommand"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "3 Note Inside Pickup"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "startIntake"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "3 Note Inside Return"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "teleShootCommand"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "3 Note Outside Pickup"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "startIntake"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "3 Note Outside Return"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "teleShootCommand"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "3 Note Autos",
+  "choreoAuto": false
+}

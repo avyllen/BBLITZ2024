@@ -6,35 +6,38 @@ package frc.robot.Commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.PCFSI.ElevatorSubsystem;
+import frc.robot.subsystems.PCFSI.FeederSubsystem;
+import frc.robot.subsystems.PCFSI.PivotSubsystem;
 
-public class ElevatorWithSpeed extends Command {
-  /** Creates a new ElevatorWithSpeed. */
-  private final ElevatorSubsystem elevator;
-  private double speed;
-
-  public ElevatorWithSpeed(ElevatorSubsystem elevator,double speed) {
+public class AmpShot extends Command {
+  private final PivotSubsystem pivot;
+ private final ElevatorSubsystem elevator; 
+  /** Creates a new AmpShot. */
+  public AmpShot(PivotSubsystem pivot,ElevatorSubsystem elevator) {
     // Use addRequirements() here to declare subsystem dependencies.
+    this.pivot = pivot;
     this.elevator = elevator;
-    this.speed = speed;
-    addRequirements(elevator);
+    addRequirements(pivot,elevator);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    elevator.setVelocity(speed);
+    pivot.ampPositionCommand();
+    elevator.ampPosition();
   }
 
-  // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return elevator.LimitChecks();
+    return true;
   }
-   // Called once the command ends or is interrupted.
+
+  // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    elevator.setHoldPosition(elevator.getEncoder());
-
+    pivot.holdPosition();
+    elevator.holdPosition();
   }
+
 
 }

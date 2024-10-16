@@ -1,0 +1,58 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 7.954514370567204,
+        "y": 2.2101951896211496
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 5.546980324729882,
+        "y": 0.4637463121080095
+      },
+      "isLocked": false,
+      "linkedName": "3 Note Inside Pickup End"
+    },
+    {
+      "anchor": {
+        "x": 0.7220452902444284,
+        "y": 4.232918465836932
+      },
+      "prevControl": {
+        "x": 1.915945370352281,
+        "y": 2.062191047459018
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "3 Note Start End"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": -58.0,
+      "rotateFast": false
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -60.06848815949215,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "3 Note Auto Paths",
+  "previewStartingState": {
+    "rotation": 38.29016319224313,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

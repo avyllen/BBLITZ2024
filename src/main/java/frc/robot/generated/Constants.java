@@ -33,7 +33,7 @@ public static final class FeederConstants {
   public static final int feederEncoderB = 6;
   public static final double IntakeSPEED = .2;
   public static final double OutakeSPEED = -.2;
-  public static final double ampOutakeSPEED = -.32;
+  public static final double ampOutakeSPEED = 60;
 }
 public static final class PivotConstants {
         
@@ -41,19 +41,21 @@ public static final class PivotConstants {
   public static final int pivotspeed = 20;
   public static final double homePosition = 0.1;
   public static final int intakePosition = -10;
-  public static final int subwooferShotPosition = -10;
-  public static final int farShot = -10;
+  public static final int subwooferShotPosition = -19;
+  public static final int farShot = -29;
+  public static final int extremeFarShot = -10;
   public static final int elevatorSubwooferShotPosition = -10;
   public static final int elevatorFarShot = -10;
-  public static final double PIVOTMAX = 18.5;
-
+  public static final double PIVOTMAX = -18.5;
 
 }
 public static final class ElevatorConstants {
         
   public static final int leftElevator = 14;
   public static final double eHomePos = 0;
-  public static final double eAmp = -40;
+  public static final double eAmp = -50;
+  public static final double efarshot = -50;
+  public static final double eextremefarshot = -50;
   public static final double eClimbPos = -25;
   public static final double ELEVATORMAX = -50.21;
 
