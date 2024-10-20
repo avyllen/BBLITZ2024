@@ -9,10 +9,12 @@ import com.revrobotics.RelativeEncoder;
 import com.revrobotics.SparkPIDController;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
+import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.generated.Constants;
+import frc.robot.generated.Constants.ElevatorConstants;
 import frc.robot.generated.Constants.PivotConstants;
 
 public class PivotSubsystem extends SubsystemBase {
@@ -138,6 +140,10 @@ public Command holdPosition()
   return run(() -> this.setPosition(this.m_encoder.getPosition()));
 }
 
+public boolean CheckPositionHome()
+{
+ return MathUtil.isNear(Constants.PivotConstants.homePosition, m_pivot.getEncoder().getPosition(), 1);
+}
 
   @Override
   public void periodic() {

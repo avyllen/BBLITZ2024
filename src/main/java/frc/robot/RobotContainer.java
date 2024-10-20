@@ -10,6 +10,7 @@ import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveModule.DriveRequestType;
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.auto.NamedCommands;
+import com.pathplanner.lib.commands.PathPlannerAuto;
 
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -21,6 +22,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Commands.AutoExtremeFarShotPivot;
@@ -32,6 +34,7 @@ import frc.robot.Commands.AutoSubwooferPivot;
 import frc.robot.Commands.ElevatorWithSpeed;
 import frc.robot.Commands.IntakeCommand;
 import frc.robot.Commands.IntakeCommandAuto;
+import frc.robot.Commands.PivotHome;
 import frc.robot.Commands.PivotwithSpeed;
 import frc.robot.Commands.TELEShootCommand;
 import frc.robot.generated.TunerConstants;
@@ -70,6 +73,8 @@ public class RobotContainer {
   public final PivotSubsystem pivot = new PivotSubsystem();
   public final PivotwithSpeed pivotUp = new PivotwithSpeed(pivot,-.2);
   public final PivotwithSpeed pivotDown = new PivotwithSpeed(pivot,.2);
+
+  public final PivotHome pivotHome = new PivotHome(pivot);
 
   //Climber SUBSYSTEM
   public final ClimberSubsystem climber = new ClimberSubsystem();
@@ -166,7 +171,7 @@ public class RobotContainer {
 //Elevator Position Up
  joystick.button(3).onTrue(elevator.setAMPPosition());
 //Elevator Position Down
-  joystick.button(4).onTrue(elevator.setHomePosition());
+  joystick.button(4).onTrue(new SequentialCommandGroup(pivotHome, elevator.setHomePosition()));
 //Elevator AMP Position
   joystick.button(6).onTrue(new ParallelCommandGroup(elevator.setAMPPosition(),pivot.ampPositionCommand()));
 //Elevator Manual Up
@@ -175,6 +180,7 @@ public class RobotContainer {
   joystick.pov(180).whileTrue(elevatorDown);
   SmartDashboard.putData("Autonomous Command", drivetrain.runOnce(() ->  drivetrain.seedFieldRelative()));
 
+  //SmartDashboard.putData("1 Note Out of Way", new PathPlannerAuto("1 Note Out of Way"));
   
   }
 
@@ -215,7 +221,7 @@ NamedCommands.registerCommand("setGREEN", teleShootCommand);
 NamedCommands.registerCommand("autoshootintakepos", teleShootCommand);
 NamedCommands.registerCommand("FeederShoot", teleShootCommand);
 NamedCommands.registerCommand("CCfarShootCommand", teleShootCommand);
-NamedCommands.registerCommand("null", teleShootCommand);
+//NamedCommands.registerCommand("null", teleShootCommand);
 
 
 
